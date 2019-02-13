@@ -8,6 +8,14 @@ INCLUDEPATH +=  C:\LearningOpenGL\glfw-3.2.1\include \
 
 SOURCES += \
         main.cpp    \
-        C:\LearningOpenGL\glad\src\glad.c
+        C:\LearningOpenGL\glad\src\glad.c \
+    myshader.cpp
 
 LIBS += -LC:\LearningOpenGL\glfw-3.2.1\lib -lglfw3
+
+HEADERS += \
+    myshader.h
+
+DISTFILES += \
+    fragment_shader_code.frag \
+    vertex_shader_code.vert
