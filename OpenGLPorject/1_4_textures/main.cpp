@@ -101,10 +101,10 @@ int main(int /*argc*/, char */*argv*/[])
     glEnableVertexAttribArray(2);
 
     int width, height, nrChannels;
-    unsigned char* data = stbi_load("../4_textures/container.jpg", &width, &height, &nrChannels, 0);
+    unsigned char* data = stbi_load("../../resource/container.jpg", &width, &height, &nrChannels, 0);
     if(data == nullptr)
     {
-        std::cout << "Error: stbi_load ../4_textures/container.jpg failed!" << std::endl;
+        std::cout << "Error: stbi_load ../../resource/container.jpg failed!" << std::endl;
     }
 
     unsigned int texture1;
@@ -127,10 +127,10 @@ int main(int /*argc*/, char */*argv*/[])
     stbi_image_free(data);
 
     stbi_set_flip_vertically_on_load(true);
-    data = stbi_load("../4_textures/awesomeface.png", &width, &height, &nrChannels, 0);
+    data = stbi_load("../../resource/awesomeface.png", &width, &height, &nrChannels, 0);
     if(data == nullptr)
     {
-        std::cout << "Error: stbi_load ../4_textures/awesomeface.png failed!" << std::endl;
+        std::cout << "Error: stbi_load ../../resource/awesomeface.png failed!" << std::endl;
     }
 
     unsigned int texture2;
@@ -150,7 +150,7 @@ int main(int /*argc*/, char */*argv*/[])
 
     stbi_image_free(data);
 
-    MyShader shaderPrograme("../4_textures/vertex_shader_code.vert", "../4_textures/fragment_shader_code.frag");
+    MyShader shaderPrograme("../1_4_textures/vertex_shader_code.vert", "../1_4_textures/fragment_shader_code.frag");
     shaderPrograme.use();
     shaderPrograme.setInt("texture1", 0);
     shaderPrograme.setInt("texture2", 1);

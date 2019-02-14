@@ -60,7 +60,7 @@ int main()
 
     MyShader ourShader("../3_1_assimp/vertex_shader_code.vert", "../3_1_assimp/fragment_shader_code.frag");
 
-    Model ourModel(("../3_1_assimp/nanosuit/nanosuit.obj"));
+    Model ourModel(("../../resource/nanosuit/nanosuit.obj"));
 
 
 
