@@ -1,6 +1,6 @@
 ﻿#include "model.h"
 #include <iostream>
-#include "stb_image.h"
+#include "stb_image/stb_image.h"
 
 Model::Model(const char* path)
 {

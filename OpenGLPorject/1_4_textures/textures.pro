@@ -3,21 +3,24 @@ CONFIG += c++11 console
 CONFIG -= app_bundle
 CONFIG -= qt
 
-INCLUDEPATH +=  C:\LearningOpenGL\glfw-3.2.1\include \
-                C:\LearningOpenGL\glad\include
+LEARNOPENGL_ROOT_DIR = ../..
+
+INCLUDEPATH +=  $$LEARNOPENGL_ROOT_DIR/glfw-3.2.1/include/ \
+                $$LEARNOPENGL_ROOT_DIR/glad/include \
+                $$LEARNOPENGL_ROOT_DIR/
 
 HEADERS += \
     myshader.h  \
-    stb_image.h
+    $$LEARNOPENGL_ROOT_DIR/stb_image/stb_image.h
 
 SOURCES += \
-        C:\LearningOpenGL\glad\src\glad.c \
-        main.cpp    \
-        myshader.cpp  \
-        stb_image.cpp
+    $$LEARNOPENGL_ROOT_DIR/glad/src/glad.c  \
+        $$LEARNOPENGL_ROOT_DIR/stb_image/stb_image.cpp  \
+    main.cpp    \
+    myshader.cpp  \
 
 DISTFILES += \
     fragment_shader_code.frag \
     vertex_shader_code.vert
 
-LIBS += -LC:\LearningOpenGL\glfw-3.2.1\lib -lglfw3
+LIBS += -L$$LEARNOPENGL_ROOT_DIR/glfw-3.2.1/lib -lglfw3
