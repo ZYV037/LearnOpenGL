@@ -161,7 +161,7 @@ int main(int /*argc*/, char */*argv*/[])
     {
         ProcessInput(window, shaderPrograme);
 
-        glClearColor(0.2, 0.3, 0.4, 1.0);
+        glClearColor(0.2f, 0.3f, 0.4f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         glActiveTexture(GL_TEXTURE0);
@@ -170,7 +170,7 @@ int main(int /*argc*/, char */*argv*/[])
         glBindTexture(GL_TEXTURE_2D, texture2);
         //glBindVertexArray(VAO);
         //glDrawArrays(GL_TRIANGLES, 0, 3);
-        glDrawElements( GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glDrawElements( GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
