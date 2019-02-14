@@ -8,8 +8,8 @@ LearnOpenGL
   compile error:  
   'constexpr const T& glm::vec<2, T, Q>::operator[](glm::vec<2, T, Q>::length_type) const' cannot be overloaded with 'constexpr T& glm::vec<2, T, Q>::operator[](glm::vec<2, T, Q>::length_type) const'
 GLM_FUNC_DECL GLM_CONSTEXPR T const& operator[](length_type i) const;
-^~~~~~~~
-*************Eliminate this error by ban constexpr.***************
+^~~~~~~~  
+*************Eliminate this error by ban constexpr.***************  
 [glm/detail/setup.hpp]
 #if GLM_HAS_CONSTEXPR
 define GLM_CONSTEXPR /*constexpr*/
