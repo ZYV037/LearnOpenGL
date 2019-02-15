@@ -19,5 +19,5 @@ define GLM_CONSTEXPR
 env: msys2 mingw64, gcc8.1, c++11
 - [assimp](https://github.com/assimp/assimp)  
 **[Caution]** release 4.1 compile Error in msys2 mingw64 gdb8.1!!!  
-version 3.1.1 works well 
+version 3.1.1 works well                             
 ![image](https://github.com/ZYV037/LearnOpenGL/blob/master/assimp/assimp_cmake_config.png)
