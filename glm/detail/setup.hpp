@@ -289,8 +289,7 @@
 #endif
 
 #if GLM_HAS_CONSTEXPR
-//#	define GLM_CONSTEXPR constexpr
-#	define GLM_CONSTEXPR /*constexpr*/
+#	define GLM_CONSTEXPR constexpr
 #else
 #	define GLM_CONSTEXPR
 #endif

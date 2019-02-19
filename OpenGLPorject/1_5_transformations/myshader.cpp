@@ -1,4 +1,5 @@
 ﻿#include "myshader.h"
+#include "glm/gtc/type_ptr.hpp"
 
 MyShader::MyShader(const GLchar* vertexPath, const GLchar* fragmentPath)
 {
@@ -33,6 +34,11 @@ void MyShader::setInt(const std::string& name, int value) const
 void MyShader::setFloat(const std::string& name, float value) const
 {
     glUniform1f(glad_glGetUniformLocation(ID, name.c_str()), value);
+}
+
+void MyShader::setMat4(const std::string& name, glm::mat4 value) const
+{
+    glUniformMatrix4fv(glad_glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE,  glm::value_ptr(value));
 }
 
 std::string MyShader::getFileContent(const GLchar* filePath)
