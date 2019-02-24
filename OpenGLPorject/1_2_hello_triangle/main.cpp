@@ -1,7 +1,16 @@
-﻿#include <iostream>
+﻿#include <stdio.h>
+#include <iostream>
+
 #include <glad/glad.h>
-#include <glfw/glfw3.h>
-#include <math.h>
+#include <GLFW/glfw3.h>
+#include "GL/freeglut.h"
+
+#define GLM_ENABLE_EXPERIMENTAL
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/transform2.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 void process_input(GLFWwindow* window)
 {
@@ -129,6 +138,32 @@ int main()
         -0.5f, 0.5f, 0.0f   // 左上角
     };
 
+    GLfloat vertices3[24] = {
+    0.0, 0.0, 0.0,
+    0.0, 0.0, 1.0,
+    0.0, 1.0, 0.0,
+    0.0, 1.0, 1.0,
+    1.0, 0.0, 0.0,
+    1.0, 0.0, 1.0,
+    1.0, 1.0, 1.0,
+    1.0, 1.0, 1.0
+    };
+
+    GLuint indices3[36] = {
+    1,5,7,
+    7,3,1,
+    0,2,6,
+    6,4,0,
+    0,1,3,
+    3,2,0,
+    7,5,4,
+    4,6,7,
+    2,3,7,
+    7,6,2,
+    1,0,4,
+    4,5,1
+    };
+
     unsigned int indices[] =
     { // 注意索引从0开始!
         0, 1, 3, // 第一个三角形
@@ -148,10 +183,10 @@ int main()
 
     glBindBuffer( GL_ARRAY_BUFFER, VBO);
     //glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), &vertices, GL_STATIC_DRAW);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices2), &vertices2, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices3), &vertices3, GL_STATIC_DRAW);
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices3), indices3, GL_STATIC_DRAW);
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0 );
     glEnableVertexAttribArray(0);
@@ -179,7 +214,7 @@ int main()
 
 
         //glDrawArrays(GL_TRIANGLES, 0, 3);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
